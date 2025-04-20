@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
 import axios from 'axios';
-
+const apiUrl = "http://localhost:5000"
 const Create = () => {
     const [task, setTask] = useState('');
 
     const createTask = () => {
-        axios.post('http://localhost:5000/add', { task: task.trim() })
+        axios.post(`${apiUrl}/add`, { task: task.trim() })
             .then(result => {
                 console.log(result.data);
                 window.location.reload();

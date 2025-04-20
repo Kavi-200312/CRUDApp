@@ -3,11 +3,12 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const TodoModel = require('./models/Todo');
 
+const MongoDBURI = "mongodb+srv://cskkavi2003:7kGQMpeBAvlUhnW1@cluster0.jaruxmm.mongodb.net/chat_db?retryWrites=true&w=majority&appName=Cluster0" 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect('mongodb://127.0.0.1:27017/TODO',
+mongoose.connect(`${MongoDBURI}/TODO`,
     console.log('MongoDB connected')
 )
 
